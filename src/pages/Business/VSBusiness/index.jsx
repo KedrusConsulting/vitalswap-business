@@ -3,8 +3,11 @@ import SplitScreen from "../../../components/SplitScreen";
 
 import sameDaySettlementImg from "../../../assets/same-day-settlement-img.webp";
 import localCurrencyPayment from "../../../assets/local-currency-mockup.webp";
+import { useNavigate } from "react-router-dom";
 
 const VSBusiness = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="vitalswap-biz">
       <div className="vitalswap-biz__caption">
@@ -12,7 +15,7 @@ const VSBusiness = () => {
         <p data-aos="fade-up">
           Easily accept payments from your African customers without worrying
           about chargeback fraud or high debit card fees. Integrate our checkout
-          seamlessly with just 5 lines of code.
+          seamlessly.
         </p>
       </div>
 
@@ -28,7 +31,11 @@ const VSBusiness = () => {
                   operations.
                 </p>
 
-                <button data-aos="fade-right" className="btn btn--primary">
+                <button
+                  data-aos="fade-right"
+                  className="btn btn--primary"
+                  onClick={() => navigate("/signup")}
+                >
                   Sign Up
                 </button>
               </div>
@@ -109,7 +116,11 @@ const VSBusiness = () => {
                   fluctuations, and keep your revenue secure with VitalSwap.
                 </p>
 
-                <button className="btn btn--primary" data-aos="fade-left">
+                <button
+                  className="btn btn--primary"
+                  data-aos="fade-left"
+                  onClick={() => navigate("/signup")}
+                >
                   Sign Up
                 </button>
               </div>
@@ -124,11 +135,17 @@ const VSBusiness = () => {
             <SplitScreen>
               <div className="local-currency-payment__left">
                 <h3 data-aos="fade-right">Local Currency Payments</h3>
+
                 <p data-aos="fade-right">
                   Accept payments in your local currency, regardless of your
                   customers' currency.
                 </p>
-                <button data-aos="fade-right" className="btn btn--primary">
+
+                <button
+                  data-aos="fade-right"
+                  className="btn btn--primary"
+                  onClick={() => navigate("/signup")}
+                >
                   Sign Up
                 </button>
               </div>
@@ -168,7 +185,11 @@ const VSBusiness = () => {
                   Monitor transactions with ease using our intuitive dashboard
                   and receive daily payouts to your bank account.
                 </p>
-                <button data-aos="fade-right" className="btn btn--primary">
+                <button
+                  data-aos="fade-right"
+                  className="btn btn--primary"
+                  onClick={() => navigate("/signup")}
+                >
                   Sign Up
                 </button>
               </div>
@@ -186,10 +207,14 @@ const VSBusiness = () => {
               <div className="free-api-integration__left">
                 <h3 data-aos="fade-right">Free API Integration</h3>
                 <p data-aos="fade-right">
-                  Embed our free API to your checkout process with five lines of
-                  code to enjoy secure and seamless transactions.
+                  Embed our free API to your checkout process to enjoy secure
+                  and seamless transactions.
                 </p>
-                <button data-aos="fade-right" className="btn btn--primary">
+                <button
+                  data-aos="fade-right"
+                  className="btn btn--primary"
+                  onClick={() => navigate("/signup")}
+                >
                   Sign Up
                 </button>
               </div>

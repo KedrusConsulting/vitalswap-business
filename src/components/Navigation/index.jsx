@@ -31,7 +31,7 @@ function Navigation() {
             href="https://vitalswap.com/download.html"
             className="navbar__cta btn btn--primary"
           >
-            Download App
+            Sign up
           </a>
 
           {!open ? (

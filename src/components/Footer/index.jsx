@@ -90,10 +90,6 @@ function Footer() {
             <p>
               <a href={"mailto:contact@vitalswap.com"}>contact@vitalswap.com</a>
             </p>
-
-            <p>
-              <a href={"tel:+1725-234-0077"}>+1 725-234-0077</a>
-            </p>
           </div>
         </div>
       </div>

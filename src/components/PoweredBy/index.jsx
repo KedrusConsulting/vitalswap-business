@@ -14,7 +14,7 @@ const images = [
 const PoweredBy = () => {
   return (
     <div className="powered-by">
-      <h4>Powered By</h4>
+      <h4 data-aos="fade-up">Powered By</h4>
 
       <div className="powered-by__logos">
         {images.map((img) => (
@@ -23,6 +23,7 @@ const PoweredBy = () => {
             key={img.name}
             src={img.src}
             alt={img.name}
+            data-aos="fade-up"
           />
         ))}
       </div>

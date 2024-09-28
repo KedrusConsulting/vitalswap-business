@@ -1,7 +1,10 @@
 import React from "react";
 import heroImg from "../../../assets/laptop-phone-mocku.webp";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="hero hero--business">
       <div className="container">
@@ -15,7 +18,7 @@ const Hero = () => {
               Receive payments from African customers
             </h1>
             <p data-aos="fade-up" data-aos-delay="600">
-              VitalSwap for Business allows you Receive payments from Africa
+              VitalSwap for Business allows you receive payments from Africa
               directly in your local currency.
             </p>
 
@@ -24,10 +27,16 @@ const Hero = () => {
                 data-aos="fade-up"
                 data-aos-delay="900"
                 className="btn btn--primary"
+                onClick={() => navigate("/signup")}
               >
                 Sign Up
               </button>
-              <button data-aos="fade-up" data-aos-delay="900" className="btn">
+              <button
+                data-aos="fade-up"
+                data-aos-delay="900"
+                className="btn"
+                onClick={() => navigate("/signin")}
+              >
                 Login
               </button>
             </div>
