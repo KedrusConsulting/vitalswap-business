@@ -27,10 +27,7 @@ function Navigation() {
             <NavLink route="#contact" label="Contact Us" />
           </ul>
 
-          <a
-            href="https://vitalswap.com/download.html"
-            className="navbar__cta btn btn--primary"
-          >
+          <a href="/signup" className="navbar__cta btn btn--primary">
             Sign up
           </a>
 
