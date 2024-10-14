@@ -2,7 +2,7 @@ import React from "react";
 import SplitScreen from "../../../components/SplitScreen";
 
 import sameDaySettlementImg from "../../../assets/same-day-settlement-img.webp";
-import localCurrencyPayment from "../../../assets/local-currency-mockup.webp";
+import localCurrencyPayment from "../../../assets/Phone11-pro-back.webp";
 import { useNavigate } from "react-router-dom";
 
 const VSBusiness = () => {
@@ -26,9 +26,8 @@ const VSBusiness = () => {
               <div className="same-day-settlement__left">
                 <h3 data-aos="fade-right">Same-Day Settlement</h3>
                 <p data-aos="fade-right">
-                  Receive funds on the same day of transaction completion,
-                  ensuring quick access to your money for seamless business
-                  operations.
+                  Receive funds on the same day of transaction, ensuring quick
+                  access to your money for seamless business operations.
                 </p>
 
                 <button
@@ -113,7 +112,7 @@ const VSBusiness = () => {
                 <h3 data-aos="fade-left">Revenue Protection</h3>
                 <p data-aos="fade-left">
                   Protect your business from chargeback fraud and currency
-                  fluctuations, and keep your revenue secure with VitalSwap.
+                  fluctuations, and keep your revenue secure.
                 </p>
 
                 <button
@@ -158,15 +157,6 @@ const VSBusiness = () => {
                   src={localCurrencyPayment}
                   alt="Local current payment mockup"
                 />
-
-                <div className="wallet-card">
-                  <div className="wallet-card__dollar">
-                    <span>USD Wallet</span>
-                    <span>$10,000</span>
-                  </div>
-
-                  <button className="wallet-card__btn">Manage</button>
-                </div>
               </div>
             </SplitScreen>
           </div>

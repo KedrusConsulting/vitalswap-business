@@ -319,7 +319,7 @@
       @include respond(tablet) {
         width: 40%;
         display: block;
-        top: 3.2rem;
+        top: 0;
         position: relative;
         margin-inline: auto;
         transform: translateX(0);
@@ -479,8 +479,8 @@
     background: #ffffff;
     padding: 16rem 8rem;
 
-    background-image: url("/src/assets/free-api-integration-mockup.svg");
-    background-size: 56rem;
+    background-image: url("/src/assets/api-integration.webp");
+    background-size: 70rem;
     background-position: 65rem 15rem;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -488,23 +488,23 @@
     @include respond(tablet) {
       padding: 4rem 2.4rem;
 
-      background-size: 54rem;
+      background-size: 64rem;
       background-position: center 30rem;
     }
 
     @include respond(md-phone) {
-      background-size: 50rem;
+      background-size: 60rem;
       background-position: 6rem 32rem;
     }
 
     @include respond(sm-phone) {
-      background-size: 46rem;
-      background-position: 4rem 31rem;
+      background-size: 64rem;
+      background-position: 4rem 30rem;
     }
 
     @include respond(xs-phone) {
-      background-size: 45rem;
-      background-position: 4rem 35rem;
+      background-size: 64rem;
+      background-position: 4rem 38rem;
     }
 
     h3 {
