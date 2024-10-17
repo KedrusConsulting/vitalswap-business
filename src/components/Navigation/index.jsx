@@ -4,8 +4,6 @@ import Logo from "../Logo";
 
 import NavLink from "../NavLink";
 
-import Hamburger from "hamburger-react";
-
 function Navigation() {
   const [open, setOpen] = useState(false);
   const [windowSize, setWindowSize] = useState({
@@ -32,7 +30,7 @@ function Navigation() {
       <div className="container">
         <div className="navbar">
           <div className="navbar__logo">
-            {<Logo type={windowSize?.width <= 960 ? "white" : "blue"} />}
+            {<Logo type={windowSize?.width <= 960 ? "blue" : "white"} />}
           </div>
 
           <ul
