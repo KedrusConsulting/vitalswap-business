@@ -29,7 +29,15 @@ const ScrollBackUp = () => {
     <div>
       {isVisible && (
         <button onClick={scrollToTop} style={styles.scrollButton}>
-          &#8679; {/* Unicode arrow-up symbol or custom icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="#ffffff"
+            viewBox="0 0 256 256"
+          >
+            <path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"></path>
+          </svg>
         </button>
       )}
     </div>
@@ -39,9 +47,9 @@ const ScrollBackUp = () => {
 const styles = {
   scrollButton: {
     position: "fixed",
-    bottom: "40px",
-    right: "40px",
-    backgroundColor: "#04396d",
+    bottom: "5%",
+    right: "4%",
+    backgroundColor: "rgb(4, 57, 109)",
     color: "#fff",
     border: "none",
     borderRadius: "50%",
@@ -49,7 +57,7 @@ const styles = {
     height: "50px",
     fontSize: "20px",
     cursor: "pointer",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+    boxShadow: "0px 4px 10px rgba(4, 57, 109, 0.2)",
     zIndex: 1000,
   },
 };
