@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/vitalswap-logo.svg";
+import vsLogoBlue from "../../assets/vitalswap-logo.svg";
+import vsLogoWhite from "../../assets/vitalswap-logo2.svg";
+import vsLogoIcon from "../../assets/vitalswap-icon.svg";
 
-function Logo() {
+function Logo({ type }) {
   return (
     <Link className="" to="/">
       <div className="vitalswap-logo">
-        <img src={logo} alt="Vitalswap Logo" />
+        {type === "white" && <img src={vsLogoWhite} alt="Vitalswap Logo" />}
+        {type === "blue" && <img src={vsLogoBlue} alt="Vitalswap Logo" />}
+        {type === "icon" && <img src={vsLogoIcon} alt="Vitalswap Logo" />}
+        {!type && <img src={vsLogoWhite} alt="Vitalswap Logo" />}
       </div>
     </Link>
   );

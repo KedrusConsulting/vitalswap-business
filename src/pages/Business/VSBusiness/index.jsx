@@ -45,25 +45,42 @@ const VSBusiness = () => {
                   alt="Lady smiling while looking at her phone"
                 />
 
-                <div className="summary">
-                  <div className="summary__edit">
-                    <h4>Summary</h4>
-                    <a href="#">Edit</a>
-                  </div>
+                <div className="amount">
+                  <div className="amount__inner">
+                    <span className="balance">Amount</span>
+                    <h3>$200</h3>
 
-                  <div className="summary__estimated-rate">
-                    <span className="desc">Estmiated Rate</span>
-                    <span className="amt">1USD = 1,589NGN</span>
-                  </div>
+                    <div className="amount__flex">
+                      <div className="amount__left">
+                        <span className="label">Date</span>
+                        <span className="date">2022-07-29 12:15pm</span>
+                      </div>
 
-                  <div className="summary__service">
-                    <span className="desc">Service Charge (10%)</span>
-                    <span className="amt">$3.00</span>
-                  </div>
+                      <div className="amount__right">
+                        <span className="label">Status</span>
+                        <div className="success">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g id="check">
+                              <path
+                                id="Vector"
+                                d="M3.07812 7.69386L4.11107 8.72682C4.75523 9.37099 5.79963 9.37099 6.44378 8.72682L10.7757 4.3949"
+                                stroke="#436E1D"
+                                stroke-width="0.82474"
+                                stroke-linecap="round"
+                              />
+                            </g>
+                          </svg>
 
-                  <div className="summary__pay">
-                    <span className="desc">Amount you'll pay</span>
-                    <span className="amt">$3003.00</span>
+                          <span>Success</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,7 +129,7 @@ const VSBusiness = () => {
                 <h3 data-aos="fade-left">Revenue Protection</h3>
                 <p data-aos="fade-left">
                   Protect your business from chargeback fraud and currency
-                  fluctuations, and keep your revenue secure.
+                  fluctuations.
                 </p>
 
                 <button

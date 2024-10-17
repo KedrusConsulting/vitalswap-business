@@ -26,6 +26,10 @@
 
     .navbar__link {
       color: var(--neutral-grey);
+
+      @include respond(tablet) {
+        color: var(--text-primary);
+      }
     }
   }
 

@@ -27,8 +27,9 @@ function Footer() {
             <p>
               VitalSwap is a global financial technology platform that offers a
               convenient and secure way to transfer, and make payments locally
-              and internationally. Vitalswap LLC is a registered MSB. Financial
-              services are provided by processor partners to our users.
+              and internationally. Vitalswap Payment Technologies LLC is a
+              registered MSB. Financial services are provided by processor
+              partners to our users.
             </p>
 
             <div className="footer__useful-links">

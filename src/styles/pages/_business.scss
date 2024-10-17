@@ -127,38 +127,96 @@
   }
 }
 
-.summary {
+.amount {
   position: absolute;
-  top: 25rem;
-  left: 2rem;
+  top: 20rem;
+  left: 15rem;
   background-color: #fff;
-  width: 34.3rem;
+  width: 28rem;
   flex-shrink: 0;
+
+  padding: 1.4rem;
+  border-radius: 13.196px;
+
+  &__inner {
+    border-radius: 0.9rem;
+    border: 0.825px solid #ececec;
+    background: #f8f8f8;
+
+    padding: 1.2rem 0.9rem;
+    text-align: center;
+
+    h3 {
+      color: #121212;
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 3rem;
+      margin: 0;
+    }
+
+    .balance {
+      color: #5e5e5e;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.6rem;
+      margin-inline: auto;
+    }
+  }
 
   @include respond(tablet) {
     top: initial;
-    bottom: 4rem;
+    bottom: 2rem;
     left: 50%;
     transform: scale(0.8) translateX(-50%);
   }
 
   @include respond(phone) {
-    transform: scale(0.6) translateX(-50%);
+    // transform: scale(0.6) translateX(-50%);
   }
 
   @include respond(md-phone) {
-    left: 35%;
+    bottom: -1rem;
     transform: scale(0.7) translateX(-50%);
   }
 
-  border-radius: 0.4rem;
-  border: 1px solid #ebeff2;
-  background: #f9fafb;
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 1.2rem;
+  }
 
-  &__edit {
-    padding: 0.8rem;
-    border-bottom: 1px solid #e3e5eb91;
-    @include flex(space-between, center);
+  &__right,
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    .label,
+    .date {
+      color: #5e5e5e;
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.6rem;
+    }
+
+    .date {
+      color: #121212;
+    }
+
+    .success {
+      display: flex;
+      padding: 1.649px 6.598px;
+      align-items: center;
+      gap: 0.4rem;
+
+      border-radius: 3.299px;
+      background: #e6f6d1;
+
+      color: #436e1d;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.3rem;
+    }
   }
 
   h4 {
@@ -167,41 +225,6 @@
     font-weight: 700;
     letter-spacing: 0.03px;
     margin: 0;
-  }
-
-  a:link {
-    color: #0875e0;
-    text-align: right;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 12px;
-    text-decoration-line: underline;
-  }
-
-  .desc {
-    color: var(--Black-300, #8f97ad);
-    font-size: 1rem;
-    line-height: 12px;
-  }
-
-  .amt {
-    color: #343947;
-    font-weight: 800;
-    text-align: right;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    letter-spacing: 0.03px;
-  }
-
-  &__estimated-rate,
-  &__service,
-  &__pay {
-    padding: 0.4rem 0.8rem;
-    @include flex(space-between, center);
-  }
-
-  &__pay {
-    padding-bottom: 0.8rem;
   }
 }
 
@@ -522,4 +545,7 @@
       height: 30rem;
     }
   }
+}
+
+.amount {
 }

@@ -3,8 +3,6 @@ import * as Yup from "yup";
 import axios from "axios";
 
 import InputField from "../../components/InputField";
-import Select from "../../components/Select";
-import TextArea from "../../components/TextArea";
 
 import vsLogo from "../../assets/vitalswap-logo2.svg";
 import userImg from "../../assets/user-3.png";
@@ -43,9 +41,9 @@ const SignIn = () => {
 
           <blockquote className="signup__testimonial">
             <p className="signup__quote">
-              Amazing experience, my transaction was seamlessly, when I
-              initiated a transfer from my wallet my bank wqs creditd in seconds
-              kudos.
+              I had an amazing experience! My transaction was seamless when I
+              initiated a transfer from my wallet, my bank account was credited
+              within seconds. Kudos!
             </p>
 
             <cite className="signup__cite">

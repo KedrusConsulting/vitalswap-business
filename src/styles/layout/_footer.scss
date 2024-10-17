@@ -3,18 +3,6 @@
   color: #fff;
   background-color: var(--vs-blue);
 
-  &__home {
-    @include respond(sm-phone) {
-      margin-top: -15vh;
-      position: relative;
-      z-index: 5;
-    }
-
-    @include respond(xs-phone) {
-      margin-top: -25vh;
-    }
-  }
-
   &__logo {
     @include respond(phone) {
       max-width: 137px;
@@ -87,12 +75,6 @@
       margin-right: 0;
       margin-bottom: 2.4rem;
     }
-  }
-
-  &__about-us {
-    // @include respond(tablet) {
-    //   grid-row: 2 / 3;
-    // }
   }
 
   &__contact {

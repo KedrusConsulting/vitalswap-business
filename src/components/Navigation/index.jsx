@@ -1,30 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Logo";
+
 import NavLink from "../NavLink";
 
 import Hamburger from "hamburger-react";
 
 function Navigation() {
   const [open, setOpen] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <nav className="nav">
       <div className="container">
         <div className="navbar">
           <div className="navbar__logo">
-            <Logo />
+            {<Logo type={windowSize?.width <= 960 ? "white" : "blue"} />}
           </div>
 
           <ul
             className={`navbar__list ${open ? "open" : ""}`}
             onClick={() => setOpen(false)}
           >
-            <NavLink route="#how-it-works" label="How it Works" />
-            <NavLink route="#rates" label="Our Rates" />
+            <NavLink route="https://vitalswap-v2.netlify.app" label="Home" />
             <NavLink route="https://vitalswap.com/blog" label="Blog" />
             <NavLink route="#faq" label="FAQ" />
-            <NavLink route="#contact" label="Contact Us" />
+            <NavLink route="#get-in-touch" label="Contact Us" />
           </ul>
 
           <a href="/signup" className="navbar__cta btn btn--primary">
