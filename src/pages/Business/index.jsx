@@ -8,6 +8,7 @@ import VSBusiness from "./VSBusiness";
 import Hero from "./Hero";
 
 import { faqDataBusiness } from "../../components/FAQ/faqData";
+import ScrollBackUp from "../../components/ScrollBackUp";
 
 const Business = () => {
   return (
@@ -29,6 +30,8 @@ const Business = () => {
         <GetInTouch />
         <Footer />
       </main>
+
+      <ScrollBackUp />
     </>
   );
 };
