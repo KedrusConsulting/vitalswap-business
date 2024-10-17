@@ -6,7 +6,7 @@ import vsLogoIcon from "../../assets/vitalswap-icon.svg";
 
 function Logo({ type }) {
   return (
-    <Link className="" to="/">
+    <Link to="/">
       <div className="vitalswap-logo">
         {type === "white" && <img src={vsLogoWhite} alt="Vitalswap Logo" />}
         {type === "blue" && <img src={vsLogoBlue} alt="Vitalswap Logo" />}
