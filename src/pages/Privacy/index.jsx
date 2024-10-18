@@ -41,14 +41,9 @@ function Privacy() {
             <p>
               We may collect e-mail address, Full Name, Bank Account Number,
               Credit and Debit card details, address, contact, contact list,
-              images, selfie, date of birth and any other data that you provide
-              while using the features of this app or website.
-            </p>
-
-            <p>
-              If you provide your personal data such as email or phone number,
-              such data will be used to contact you as part of the functionality
-              of our services.
+              images, selfie, date of birth, location, location data, and any
+              other data that you provide while using the features of this app
+              or website.
             </p>
 
             <p>
@@ -78,6 +73,14 @@ function Privacy() {
             <p>
               We may share all or part of your data with 3rd party as part of
               the functionality of our services
+            </p>
+
+            <p>
+              Location and Location Data: We may collect information about your
+              location and location data both in the foreground and background,
+              to comply with regulatory requirements, enhance app functionality,
+              and provide relevant services including sharing with 3rd party
+              partners to provide service or comply to regulations.
             </p>
 
             <p>
@@ -116,7 +119,7 @@ function Privacy() {
               your personal data collected in the event (on this website),
               thereby causing our failure to provide the service, We shall
               discontinue rendering services to you and we do not take
-              responsibility for any difficulty this may cause you
+              responsibility for any difficulty this may cause you.
             </p>
 
             <p>
@@ -154,7 +157,7 @@ function Privacy() {
 
             <p>
               You may launch complaints in connection with personal data
-              protection with us by E-mail: Contact@vitalswap.com
+              protection with us by E-mail: contact@vitalswap.com
             </p>
           </div>
         </div>
