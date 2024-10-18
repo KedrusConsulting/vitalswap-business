@@ -58,7 +58,7 @@ function Navigation() {
             className={`navbar__list ${open ? "open" : ""}`}
             onClick={() => setOpen(false)}
           >
-            <NavLink route="https://vitalswap-v2.netlify.app" label="Home" />
+            <NavLink route={import.meta.env.VITE_VS_URL} label="Home" />
             <NavLink route="https://vitalswap.com/blog" label="Blog" />
             <NavLink route="#faq" label="FAQ" />
             <NavLink route="#get-in-touch" label="Contact Us" />
