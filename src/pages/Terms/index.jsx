@@ -80,8 +80,9 @@ function Terms() {
 
             <p>
               We may keep e-mail address, Full Name, Bank Account Number, Credit
-              and Debit card details, address, date of birth and any other data
-              that you provide while using the features of this app or website.
+              and Debit card details, address, date of birth, location, location
+              data, and any other data that you provide while using the features
+              of this app or website.
             </p>
 
             <p>
@@ -103,9 +104,17 @@ function Terms() {
             </p>
 
             <p>
+              Location and Location Data: We may collect information about your
+              location and location data both in the foreground and background,
+              to comply with regulatory requirements, enhance app functionality,
+              and provide relevant services including sharing with 3rd party
+              partners to provide service or comply to regulations.
+            </p>
+
+            <p>
               If you provide your personal data such as email or phone number,
               such data will be used to contact you as part of the functionality
-              of our services
+              of our services.
             </p>
 
             <p>
@@ -149,7 +158,7 @@ function Terms() {
               your personal data collected in the event (on this website),
               thereby causing our failure to provide the service, We shall
               discontinue rendering services to you and we do not take
-              responsibility for any difficulty this may cause you
+              responsibility for any difficulty this may cause you.
             </p>
 
             <p>
@@ -184,7 +193,7 @@ function Terms() {
 
             <p>
               You may launch complaints in connection with personal data
-              protection with us by E-mail: Contact@vitalswap.com
+              protection with us by E-mail: contact@vitalswap.com
             </p>
           </div>
 
@@ -223,7 +232,7 @@ function Terms() {
             <h6>Support</h6>
 
             <p>
-              Please call us at 725-234-0077 for support on any issues related
+              Please call us at 509-295-9260 for support on any issues related
               to your use of VitalSwap or if your device is lost, stolen or
               compromised.
             </p>
@@ -323,21 +332,19 @@ function Terms() {
           </div>
 
           <div className="text-block">
-            {/* <h5 className="text-block__heading">Zelle.</h5> */}
-            <p className="mb-3">
-              <strong>Zelle:</strong>Partner's Disclosure: You are sending funds
-              to ABetaGlobal LLC. ABetaGlobal LLC is a related party service
-              provider to VitalSwap LLC. ABetaGlobal is *not* a bank or payment
-              processor. Funds sent to ABetaGlobal are custodians at banks that
-              are FDIC-insured. After funds sent are received and settled by
-              ABetaGlobal, VitalSwap LLC will credit the corresponding user
-              account. We will decline funds sent from bank accounts that are
-              not connected to your VitalSwap user account.
+            <h5 className="text-block__heading">Zelle.</h5>
+            <p>
+              Partner's Disclosure: You are sending funds to VitalSwap LLC.
+              VitalSwap LLC is *not* a bank or payment processor. The funds sent
+              to VitalSwap are held at FDIC-insured banks. After funds sent are
+              received and settled by VitalSwap, VitalSwap will credit the
+              corresponding user account. We will decline funds sent from bank
+              accounts that are not connected to your VitalSwap user account.
             </p>
 
             <p>
               <strong>Timing:</strong> While most transfers will be settled the
-              same day, funds sent to ABetaGlobal may take up to 2 days for
+              same day, funds sent to VitalSwap may take up to 2 days for
               settlement. We cannot estimate or guarantee the exact timing of
               when funds will be available due to varying settlements for
               transfers from each bank. Learn more about Zelle's User Service
