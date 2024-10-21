@@ -30,7 +30,7 @@ const SignIn = () => {
           </figure>
 
           <h2 className="signup__title">
-            Make payments to merchants across the globe
+            Make payments to businesses across the globe
           </h2>
 
           <p className="signup__text">

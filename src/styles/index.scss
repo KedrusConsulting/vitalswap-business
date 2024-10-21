@@ -43,6 +43,7 @@ html {
 
   @include respond(lg-tablet) {
     font-size: 56.25%;
+    // overflow-x: hidden;
   }
 }
 
@@ -73,6 +74,10 @@ a:visited {
 
 img {
   max-width: 100%;
+}
+
+section {
+  overflow-x: hidden;
 }
 
 .mt-2 {
