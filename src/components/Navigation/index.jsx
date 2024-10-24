@@ -59,7 +59,7 @@ function Navigation() {
             onClick={() => setOpen(false)}
           >
             <NavLink route={import.meta.env.VITE_VS_URL} label="Home" />
-            <NavLink route="https://vitalswap.com/blog" label="Blog" />
+            <NavLink route="https://blog.vitalswap.com" label="Blog" />
             <NavLink route="#faq" label="FAQ" />
             <NavLink route="#get-in-touch" label="Contact Us" />
           </ul>
