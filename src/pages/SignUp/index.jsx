@@ -24,6 +24,7 @@ function SignUp() {
     email: "",
     phone: "",
     countryOfBusiness: "",
+    password: "",
     description: "",
   };
 
@@ -34,6 +35,7 @@ function SignUp() {
     email: Yup.string().email().required(),
     phone: Yup.string().required(),
     countryOfBusiness: Yup.string().required(),
+    password: Yup.string(),
     description: Yup.string().required(),
   });
 
@@ -200,6 +202,16 @@ function SignUp() {
                   label="Description of Business"
                   value={values.description}
                   placeholder="Tell us about your business"
+                  onChange={handleChange}
+                />
+
+                <InputField
+                  type="password"
+                  name="password"
+                  id="password"
+                  label="Enter your password"
+                  placeholder="******"
+                  value={values.password}
                   onChange={handleChange}
                 />
 

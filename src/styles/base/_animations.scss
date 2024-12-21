@@ -31,3 +31,9 @@
     background-position: -1rem -5rem;
   }
 }
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}

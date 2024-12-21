@@ -6,7 +6,10 @@ import InputField from "../../components/InputField";
 
 import vsLogo from "../../assets/vitalswap-logo2.svg";
 import userImg from "../../assets/user-3.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { credentials, dashboardURL, loginURL } from "../../utils/constants";
+import Loader from "../../components/Loader";
 
 const SignIn = () => {
   const initialValues = {
@@ -15,11 +18,40 @@ const SignIn = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email().required(),
+    email: Yup.string().email("Please enter a valid email").required(),
     password: Yup.string().required(),
   });
 
-  const onSubmit = async (values, { resetForm }, onSubmitProps) => {};
+  const onSubmit = async (values, { resetForm }, onSubmitProps) => {
+    const { email, password } = values;
+
+    const payload = {
+      username: email,
+      password,
+    };
+
+    try {
+      const res = await axios.post(loginURL, payload, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Basic ${credentials}`,
+        },
+      });
+
+      if (res?.status === 200) {
+        const { accessToken: token, userId: id } = res?.data;
+        window.location.href = `${dashboardURL}?id=${id}&token=${token}`;
+      }
+    } catch (err) {
+      toast.error(
+        err.response?.data?.error ||
+          err.response?.data?.message ||
+          err?.message ||
+          "Unable to login"
+      );
+    }
+  };
 
   return (
     <div className="signup">
@@ -95,7 +127,7 @@ const SignIn = () => {
                   className="btn btn--primary"
                   disabled={!dirty}
                 >
-                  {isSubmitting ? "Please wait..." : "Login"}
+                  {isSubmitting ? <Loader /> : "Login"}
                 </button>
               </form>
             )}

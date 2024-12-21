@@ -1,0 +1,41 @@
+.alert {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  max-width: 40rem;
+  padding: 1.6rem;
+  align-items: start;
+  gap: 1.2rem;
+
+  z-index: 3;
+  box-shadow: $shadow-xs;
+  color: map-get($colors, g-500);
+  background-color: map-get($colors, whyte);
+
+  @include containerBorder(g-300, g-25);
+
+  &--success {
+    @include containerBorder(s-300, s-25);
+
+    & > * {
+      color: map-get($colors, s-700);
+      fill: map-get($colors, s-700);
+    }
+  }
+
+  &--error {
+    @include containerBorder(e-300, e-25);
+
+    & > * {
+      color: map-get($colors, e-700);
+      fill: map-get($colors, e-700);
+    }
+  }
+
+  span {
+    margin-right: auto;
+  }
+
+  &--close {
+    cursor: pointer;
+  }
+}

@@ -153,6 +153,12 @@
     border-radius: 8px;
     background: #04396d;
     color: #fff;
+    transition: all 0.2s ease;
+
+    // &:disabled {
+    //   background-color: #d9ebfe;
+    //   color: #04396d;
+    // }
   }
 
   &__forgot {

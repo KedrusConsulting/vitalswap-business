@@ -1,5 +1,6 @@
 import React, { useEffect, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import AOS from "aos";
 import Loadable from "./components/Loadable";
@@ -29,6 +30,28 @@ function App() {
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/signin" element={<SignIn />} />
       </Routes>
+
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "6px" }}
+        toastOptions={{
+          className: "alert",
+          success: {
+            className: "alert--success",
+            duration: 4000,
+          },
+          error: {
+            className: "alert--error",
+            duration: 8000,
+          },
+          style: {
+            fontSize: "1.5rem",
+            maxWidth: "60rem",
+            padding: "1.6rem 2.4rem",
+          },
+        }}
+      />
     </div>
   );
 }

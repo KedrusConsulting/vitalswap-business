@@ -1,11 +1,10 @@
-import React from "react";
-import loaderGif from "../../assets/loader_transparent.gif";
+import { Spinner } from "@phosphor-icons/react";
 
 const Loader = () => {
   return (
-    <div className="loader">
-      <img src={loaderGif} alt="loader" height={300} />
-    </div>
+    <span className="loader">
+      <Spinner size={16} color="#fff" className="loader--icon" />
+    </span>
   );
 };
 
