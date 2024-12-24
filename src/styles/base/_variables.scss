@@ -7,3 +7,115 @@ $spacing-3: 2.4rem;
 $spacing-4: 3.2rem;
 $spacing-5: 4rem;
 $spacing-6: 4.8rem;
+
+$spacing: (
+  "1": 0.8rem,
+  "2": 1.2rem,
+  "3": 1.6rem,
+  "4": 2.4rem,
+  "5": 3.2rem,
+  "6": 4rem,
+  "7": 4.8rem,
+);
+
+$colors: (
+  y-10: #ffffff1a,
+  y-20: #ffffff33,
+  y-30: #ffffff4d,
+  y-40: #ffffff66,
+  y-50: #ffffff80,
+  y-60: #ffffff99,
+  y-70: #ffffffb3,
+  y-80: #ffffffcc,
+  y-90: #ffffffe6,
+  y-100: #ffffff,
+
+  // Gray Colors
+  g-25: #fcfcfd,
+  g-50: #f9fafb,
+  g-100: #f2f4f7,
+  g-200: #e4e7ec,
+  g-300: #d0d5dd,
+  g-400: #98a2b3,
+  g-500: #667085,
+  g-600: #475467,
+  g-700: #344054,
+  g-800: #1d2939,
+  g-900: #101828,
+
+  // Error Colors
+  e-25: #fffbfa,
+  e-50: #fef3f2,
+  e-100: #fee4e2,
+  e-200: #fecdca,
+  e-300: #fda29b,
+  e-400: #f97066,
+  e-500: #f04438,
+  e-600: #d92d20,
+  e-700: #b42318,
+  e-800: #301a19,
+  e-900: #7a271a,
+
+  // Warning Colors
+  w-25: #fffcf5,
+  w-50: #fffaeb,
+  w-100: #fef0c7,
+  w-200: #fedf89,
+  w-300: #fec84b,
+  w-400: #fdb022,
+  w-500: #f79009,
+  w-600: #dc6803,
+  w-700: #b54708,
+  w-800: #93370d,
+  w-900: #7a2e0e,
+
+  // Success Colors
+  s-25: #f6fef9,
+  s-50: #ecfdf3,
+  s-100: #d1fadf,
+  s-200: #a6f4c5,
+  s-300: #6ce9a6,
+  s-400: #32d583,
+  s-500: #12b76a,
+  s-600: #039855,
+  s-700: #027a48,
+  s-800: #05603a,
+  s-900: #054f31,
+
+  // Blue Colors
+  b-25: #e6ebf0,
+  b-50: #ebf3fe,
+  b-100: #c4ddfd,
+  b-200: #70aefa,
+  b-300: #2285f7,
+  b-400: #0760c0,
+  b-500: #04396d,
+  b-600: #032f59,
+  b-700: #021f40,
+  b-800: #02182c,
+  b-900: #010e1a,
+
+  raisin-black: #171721,
+  black: #121212,
+);
+
+$shadows: (
+  "sm": (
+    0px 3px 6px -3px rgba(0, 0, 0, 0.05),
+    0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.05),
+    0px 1px 0px -1px rgba(0, 0, 0, 0.05),
+  ),
+  "md": (
+    0px 1px 3px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 4px -2px rgba(0, 0, 0, 0.04),
+  ),
+  "lg": (
+    0px 6px 12px -6px rgba(0, 0, 0, 0.08),
+    0px 3px 6px -3px rgba(0, 0, 0, 0.08),
+  ),
+  "xl": (
+    0px 12px 24px -12px rgba(0, 0, 0, 0.08),
+    0px 6px 12px -6px rgba(0, 0, 0, 0.1),
+  ),
+);

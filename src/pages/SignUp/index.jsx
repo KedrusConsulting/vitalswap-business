@@ -9,13 +9,17 @@ import TextArea from "../../components/TextArea";
 
 import vsLogo from "../../assets/vitalswap-logo2.svg";
 import userImg from "../../assets/user-3.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { credentials, signupURL } from "../../utils/constants";
+import countries from "../../countries.json";
+import toast from "react-hot-toast";
 
 function SignUp() {
+  const navigate = useNavigate();
+
   const [countriesOptions, setCountriesOptions] = useState([
     { label: "Select Country", value: "" },
   ]);
-  const [showAlert, setShowAlert] = useState(false);
 
   const initialValues = {
     firstname: "",
@@ -35,52 +39,56 @@ function SignUp() {
     email: Yup.string().email().required(),
     phone: Yup.string().required(),
     countryOfBusiness: Yup.string().required(),
-    password: Yup.string(),
+    password: Yup.string().required(),
     description: Yup.string().required(),
   });
 
   const onSubmit = async (values, { resetForm }, onSubmitProps) => {
+    const payload = {
+      firstName: values.firstname,
+      lastName: values.lastname,
+      businessName: values.companyName,
+      email: values.email,
+      phoneNumber: values.phone,
+      businessDescription: values.description,
+      countryOfBusiness: values.countryOfBusiness,
+      password: values.password,
+      acceptTerms: true,
+    };
+
     try {
-      const data = {
-        first_name: values.firstname,
-        last_name: values.lastname,
-        company_name: values.companyName,
-        email_address: values.email,
-        email: values.email,
-        phone_number: values.phone,
-        business_description: values.description,
-        country_of_Business: values.countryOfBusiness,
-      };
+      const res = await axios.post(signupURL, payload, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Basic ${credentials}`,
+        },
+      });
 
-      const res = await axios.post(
-        "https://vitalswap.com/test/api_v2/users/webForm",
-        data
-      );
+      if (res?.status === 200) {
+        const { message } = res?.data;
 
-      if (res.status === 200) {
-        await onSubmitProps?.setSubmitting(false);
-        resetForm();
-        setShowAlert(true);
-
-        setInterval(() => setShowAlert(false), 10000);
+        toast.success(message);
+        navigate("/signin");
       }
-
-      console.log(res);
     } catch (err) {
-      console.log(err);
+      toast.error(
+        err.response?.data?.error ||
+          err.response?.data?.message ||
+          err?.message ||
+          "Unable to login"
+      );
     }
   };
 
   useEffect(() => {
     const getCountries = async () => {
-      const res = await axios.get("https://restcountries.com/v2/all");
-
-      const data = res.data;
-      const countries = data.map((res) => {
+      const data = countries;
+      const formattedCountries = data.map((res) => {
         return { label: res.name, value: res.name };
       });
 
-      setCountriesOptions((prev) => [...prev, ...countries]);
+      setCountriesOptions((prev) => [...prev, ...formattedCountries]);
     };
 
     getCountries();
@@ -133,7 +141,15 @@ function SignUp() {
             validationSchema={validationSchema}
             onSubmit={onSubmit}
           >
-            {({ values, handleChange, handleSubmit, dirty, isSubmitting }) => (
+            {({
+              values,
+              handleChange,
+              handleSubmit,
+              dirty,
+              isSubmitting,
+              errors,
+              touched,
+            }) => (
               <form className="signup__form" onSubmit={handleSubmit}>
                 <div className="signup__wrapper">
                   <InputField
@@ -144,6 +160,7 @@ function SignUp() {
                     placeholder="John"
                     value={values.firstname}
                     onChange={handleChange}
+                    errorMessage={touched.firstname && errors.firstname}
                   />
 
                   <InputField
@@ -154,6 +171,7 @@ function SignUp() {
                     placeholder="Adebayo"
                     value={values.lastname}
                     onChange={handleChange}
+                    errorMessage={touched.lastname && errors.lastname}
                   />
                 </div>
 
@@ -165,6 +183,7 @@ function SignUp() {
                   placeholder="VitalSwap"
                   value={values.companyName}
                   onChange={handleChange}
+                  errorMessage={touched.companyName && errors.companyName}
                 />
 
                 <InputField
@@ -175,6 +194,7 @@ function SignUp() {
                   placeholder="example@example.com"
                   value={values.email}
                   onChange={handleChange}
+                  errorMessage={touched.email && errors.email}
                 />
 
                 <InputField
@@ -185,6 +205,7 @@ function SignUp() {
                   placeholder="+234 805 438 3489"
                   value={values.phone}
                   onChange={handleChange}
+                  errorMessage={touched.phone && errors.phone}
                 />
 
                 <Select
@@ -194,6 +215,9 @@ function SignUp() {
                   label="Country of Business"
                   value={values.countryOfBusiness}
                   onChange={handleChange}
+                  errorMessage={
+                    touched.countryOfBusiness && errors.countryOfBusiness
+                  }
                 />
 
                 <TextArea
@@ -203,6 +227,7 @@ function SignUp() {
                   value={values.description}
                   placeholder="Tell us about your business"
                   onChange={handleChange}
+                  errorMessage={touched.description && errors.description}
                 />
 
                 <InputField
@@ -213,6 +238,7 @@ function SignUp() {
                   placeholder="******"
                   value={values.password}
                   onChange={handleChange}
+                  errorMessage={touched.password && errors.password}
                 />
 
                 <button

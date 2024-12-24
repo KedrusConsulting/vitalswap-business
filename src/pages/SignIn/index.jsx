@@ -127,7 +127,7 @@ const SignIn = () => {
                   className="btn btn--primary"
                   disabled={!dirty}
                 >
-                  {isSubmitting ? <Loader /> : "Login"}
+                  {isSubmitting ? "Please wait..." : "Get Started"}
                 </button>
               </form>
             )}

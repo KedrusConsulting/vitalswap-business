@@ -50,4 +50,9 @@
   &__description {
     height: 50px;
   }
+
+  &__error {
+    color: map-get($colors, e-500);
+    font-size: 1.2rem;
+  }
 }

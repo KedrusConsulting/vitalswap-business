@@ -27,7 +27,9 @@ function InputField({
         autoComplete="off"
       />
 
-      {/* {} */}
+      {errorMessage && (
+        <span className="inputfield__error">{errorMessage}</span>
+      )}
     </fieldset>
   );
 }

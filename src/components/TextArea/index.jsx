@@ -24,7 +24,9 @@ function TextArea({
         placeholder={placeholder}
       ></textarea>
 
-      {/* {} */}
+      {errorMessage && (
+        <span className="inputfield__error">{errorMessage}</span>
+      )}
     </fieldset>
   );
 }
