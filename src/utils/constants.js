@@ -1,9 +1,7 @@
-const loginURL = `${import.meta.env.VITE_VS_API_URL}:${
-  import.meta.env.VITE_VS_PORT
-}/vs/dashboard/users/login`;
+const loginURL = `${import.meta.env.VITE_VS_API_URL}/vs/dashboard/users/login`;
 
-const signupURL = `${import.meta.env.VITE_VS_API_URL}:${
-  import.meta.env.VITE_VS_PORT
+const signupURL = `${
+  import.meta.env.VITE_VS_API_URL
 }/vs/dashboard/users/register`;
 
 const dashboardURL = `${import.meta.env.VITE_VS_DASHBOARD_URL}/dashboard`;
