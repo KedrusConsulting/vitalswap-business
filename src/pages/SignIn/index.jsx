@@ -90,7 +90,7 @@ const SignIn = () => {
           <div className="signup__header">
             <h1>Welcome Back!</h1>
             <p>
-              Don't have an account? <Link to="#">Sign Up</Link>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
           </div>
 

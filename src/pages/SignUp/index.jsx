@@ -131,7 +131,7 @@ function SignUp() {
           <div className="signup__header">
             <h1>Sign Up</h1>
             <p>
-              Already have an account? <Link to="#">Login</Link>
+              Already have an account? <Link to="/signin">Login</Link>
             </p>
           </div>
 
