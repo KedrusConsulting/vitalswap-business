@@ -1,3 +1,4 @@
+import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -6,48 +7,53 @@ import InputField from "../../components/InputField";
 
 import vsLogo from "../../assets/vitalswap-logo2.svg";
 import userImg from "../../assets/user-3.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { dashboardURL, loginURL } from "../../utils/constants";
+import { otpURL } from "../../utils/constants";
 
-const SignIn = () => {
+const ForgotPassword = () => {
+  const navigate = useNavigate();
+
   const initialValues = {
     email: "",
-    password: "",
   };
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Please enter a valid email").required(),
-    password: Yup.string().required(),
   });
 
-  const onSubmit = async (values, { resetForm }, onSubmitProps) => {
-    const { email, password } = values;
-
-    const payload = {
-      username: email,
-      password,
-    };
+  const onSubmit = async (values, { resetForm }) => {
+    const { email } = values;
 
     try {
-      const res = await axios.post(loginURL, payload, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
+      const res = await axios.get(
+        `${otpURL}?email=${encodeURIComponent(email)}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
 
       if (res?.status === 200) {
-        const { accessToken: token, userId: id } = res?.data;
-        window.location.href = `${dashboardURL}?id=${id}&token=${token}`;
+        const { message } = res.data;
+
+        toast.success(
+          message || "OTP sent successfully. Please check your email!"
+        );
+
+        navigate("/verify-email", { state: { email } });
       }
     } catch (err) {
       toast.error(
-        err.response?.data?.error ||
-          err.response?.data?.message ||
+        err.response?.data?.message ||
+          err.response?.data?.error ||
           err?.message ||
-          "Unable to login"
+          "Unable to send OTP. Please try again!"
       );
+    } finally {
+      resetForm();
     }
   };
 
@@ -87,10 +93,8 @@ const SignIn = () => {
       <div className="signup__right">
         <div className="signup__group">
           <div className="signup__header">
-            <h1>Welcome Back!</h1>
-            <p>
-              Don't have an account? <Link to="/signup">Sign Up</Link>
-            </p>
+            <h1>Forgot Password!</h1>
+            <p>Enter your vitalswap email to recover account. </p>
           </div>
 
           <Formik
@@ -110,29 +114,19 @@ const SignIn = () => {
                   onChange={handleChange}
                 />
 
-                <InputField
-                  type="password"
-                  name="password"
-                  id="password"
-                  label="Password"
-                  placeholder="********"
-                  value={values.password}
-                  onChange={handleChange}
-                />
-
                 <button
                   type="submit"
                   className="btn btn--primary"
                   disabled={!dirty}
                 >
-                  {isSubmitting ? "Please wait..." : "Get Started"}
+                  {isSubmitting ? "Please wait..." : "Continue"}
                 </button>
               </form>
             )}
           </Formik>
 
           <p className="signup__forgot">
-            Forgot Password? <Link to="/forgot-password">Recover</Link>
+            Go back to <Link to="/signin">Signin</Link>
           </p>
         </div>
       </div>
@@ -140,4 +134,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default ForgotPassword;

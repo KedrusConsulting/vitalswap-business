@@ -51,6 +51,25 @@
     height: 50px;
   }
 
+  &__otp {
+    flex-direction: row;
+    align-items: center;
+    max-width: 26.4rem;
+    // margin: 0 auto;
+    gap: 1.1rem;
+
+    @media only screen and (max-width: 420px) {
+      transform: scale(0.8);
+    }
+  }
+
+  &__otp &__input {
+    width: 4.4rem;
+    height: 4.4rem;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
   &__error {
     color: map-get($colors, e-500);
     font-size: 1.2rem;

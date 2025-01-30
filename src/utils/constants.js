@@ -1,4 +1,8 @@
 const loginURL = `${import.meta.env.VITE_VS_API_URL}/vs/dashboard/users/login`;
+const otpURL = `${import.meta.env.VITE_VS_API_URL}/vs/dashboard/users/otp`;
+const resetPasswordURL = `${
+  import.meta.env.VITE_VS_API_URL
+}/vs/dashboard/users/reset-password`;
 
 const signupURL = `${
   import.meta.env.VITE_VS_API_URL
@@ -6,8 +10,4 @@ const signupURL = `${
 
 const dashboardURL = `${import.meta.env.VITE_VS_DASHBOARD_URL}/dashboard`;
 
-const credentials = btoa(
-  `${import.meta.env.VITE_VS_USERNAME}:${import.meta.env.VITE_VS_PASSWORD}`
-);
-
-export { loginURL, signupURL, dashboardURL, credentials };
+export { loginURL, signupURL, dashboardURL, otpURL, resetPasswordURL };

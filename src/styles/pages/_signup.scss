@@ -161,6 +161,14 @@
     color: #04396d;
   }
 
+  &__form .inputfield__otp {
+    justify-content: center;
+  }
+
+  &__form .inputfield__otp ~ .btn {
+    margin-top: 2.4rem;
+  }
+
   &__forgot {
     color: #645d5d;
     font-size: 1.4rem;
