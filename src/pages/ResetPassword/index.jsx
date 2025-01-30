@@ -8,6 +8,7 @@ import InputField from "../../components/InputField";
 import vsLogo from "../../assets/vitalswap-logo2.svg";
 import userImg from "../../assets/user-3.png";
 import { resetPasswordURL } from "../../utils/constants";
+import { useEffect } from "react";
 
 const ResetPassword = () => {
   const location = useLocation();
@@ -16,11 +17,12 @@ const ResetPassword = () => {
   const email = location?.state?.email || "";
   const otp_id = location?.state?.otp_id || "";
 
-  if (!email || !otp_id) {
-    toast.error("Invalid password reset request.");
-    navigate("/forgot-password", { replace: true });
-    return null;
-  }
+  useEffect(() => {
+    if (!email || !otp_id) {
+      toast.error("Invalid password reset request.");
+      navigate("/forgot-password", { replace: true });
+    }
+  }, []);
 
   const initialValues = {
     newPassword: "",
