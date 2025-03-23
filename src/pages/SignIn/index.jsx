@@ -5,6 +5,7 @@ import axios from "axios";
 import InputField from "../../components/InputField";
 
 import vsLogo from "../../assets/vitalswap-logo2.svg";
+import vsLogoBlue from "../../assets/vitalswap-logo.svg";
 import userImg from "../../assets/user-3.png";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -38,8 +39,19 @@ const SignIn = () => {
       });
 
       if (res?.status === 200) {
-        const { accessToken: token, userId: id } = res?.data;
-        window.location.href = `${dashboardURL}?id=${id}&token=${token}`;
+        const {
+          accessToken: token,
+          userId: id,
+          refreshToken,
+          businessUser,
+        } = res?.data;
+
+        if (!businessUser)
+          return toast.error(
+            "UNAUTHORIZED: You need a business account to access VitalSwap Business"
+          );
+
+        window.location.href = `${dashboardURL}?id=${id}&token=${token}&refreshToken=${refreshToken}`;
       }
     } catch (err) {
       toast.error(
@@ -84,7 +96,11 @@ const SignIn = () => {
         </div>
       </div>
 
-      <div className="signup__right">
+      <div className="signup__right signup--mobile">
+        <figure className="signup__vs-logo signup__logo-mobile">
+          <img src={vsLogoBlue} alt="Vitalswap logo" />
+        </figure>
+
         <div className="signup__group">
           <div className="signup__header">
             <h1>Welcome Back!</h1>

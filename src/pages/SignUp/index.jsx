@@ -8,9 +8,10 @@ import Select from "../../components/Select";
 import TextArea from "../../components/TextArea";
 
 import vsLogo from "../../assets/vitalswap-logo2.svg";
+import vsLogoBlue from "../../assets/vitalswap-logo.svg";
 import userImg from "../../assets/user-3.png";
 import { Link, useNavigate } from "react-router-dom";
-import { credentials, signupURL } from "../../utils/constants";
+import { signupURL } from "../../utils/constants";
 import countries from "../../countries.json";
 import toast from "react-hot-toast";
 
@@ -127,6 +128,10 @@ function SignUp() {
       </div>
 
       <div className="signup__right">
+        <figure className="signup__vs-logo signup__logo-mobile">
+          <img src={vsLogoBlue} alt="Vitalswap logo" />
+        </figure>
+
         <div className="signup__group">
           <div className="signup__header">
             <h1>Sign Up</h1>
